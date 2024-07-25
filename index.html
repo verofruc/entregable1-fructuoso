@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdulería</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Carrito de compras</h1>
+    
+    <!-- Que hace el programa? -->
+    <p>
+        Este código crea arrito de compras. El HTML define la estructura básica de la página, que incluye una lista de productos que se pueden agregar al carrito y una sección que muestra los ítems añadidos al carrito, así como el total de la compra. Los botones permiten agregar productos al carrito, borrar todos los ítems del carrito, o proceder al pago.
+    </p>
+    <p>
+        El código JavaScript se encarga de manejar la lógica de la aplicación. Utiliza la función 'agregarAlCarrito' para solicitar al usuario la cantidad de productos que desea añadir al carrito mediante un prompt. Luego, actualiza el carrito y el total mostrado en la página con la función 'actualizarCarrito'. La función 'borrarTodosLosItems' permite eliminar todos los ítems del carrito después de confirmar la acción con un confirm. Finalmente, la función pagar muestra un mensaje de agradecimiento y limpia el carrito si se confirma el pago. Si el carrito está vacío, se muestra un mensaje de alerta.
+    </p>
+    
+    <div id="productos">
+        <h2>Productos</h2>
+        <button onclick="agregarAlCarrito('Manzana', 100)">Agregar Manzana ($100.00)</button>
+        <button onclick="agregarAlCarrito('Banana', 150)">Agregar Banana ($150.00)</button>
+        <button onclick="agregarAlCarrito('Naranja', 175)">Agregar Naranja ($175.00)</button>
+        <button onclick="agregarAlCarrito('Papaya', 275)">Agregar Papaya ($275.00)</button>
+        <button onclick="agregarAlCarrito('Frutilla', 375)">Agregar Frutilla ($375.00)</button>
+    </div>
+    <div id="carrito">
+        <h2>Tu carrito</h2>
+        <ul id="items-del-carrito"></ul>
+        <p>Total: $<span id="total">0.00</span></p>
+        <button onclick="borrarTodosLosItems()">Borrar carrito</button>
+        <button onclick="pagar()">Pagar!</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

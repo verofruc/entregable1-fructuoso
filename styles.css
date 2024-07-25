@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#productos, #carrito {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #59c939;
+}
+
+h2 {
+    margin-top: 0;
+}
