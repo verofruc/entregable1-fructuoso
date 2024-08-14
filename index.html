@@ -9,22 +9,50 @@
 <body>
     <h1>Carrito de compras</h1>
     
-    <!-- Que hace el programa? -->
-    <p>
-        Este código crea arrito de compras. El HTML define la estructura básica de la página, que incluye una lista de productos que se pueden agregar al carrito y una sección que muestra los ítems añadidos al carrito, así como el total de la compra. Los botones permiten agregar productos al carrito, borrar todos los ítems del carrito, o proceder al pago.
-    </p>
-    <p>
-        El código JavaScript se encarga de manejar la lógica de la aplicación. Utiliza la función 'agregarAlCarrito' para solicitar al usuario la cantidad de productos que desea añadir al carrito mediante un prompt. Luego, actualiza el carrito y el total mostrado en la página con la función 'actualizarCarrito'. La función 'borrarTodosLosItems' permite eliminar todos los ítems del carrito después de confirmar la acción con un confirm. Finalmente, la función pagar muestra un mensaje de agradecimiento y limpia el carrito si se confirma el pago. Si el carrito está vacío, se muestra un mensaje de alerta.
-    </p>
-    
     <div id="productos">
         <h2>Productos</h2>
-        <button onclick="agregarAlCarrito('Manzana', 100)">Agregar Manzana ($100.00)</button>
-        <button onclick="agregarAlCarrito('Banana', 150)">Agregar Banana ($150.00)</button>
-        <button onclick="agregarAlCarrito('Naranja', 175)">Agregar Naranja ($175.00)</button>
-        <button onclick="agregarAlCarrito('Papaya', 275)">Agregar Papaya ($275.00)</button>
-        <button onclick="agregarAlCarrito('Frutilla', 375)">Agregar Frutilla ($375.00)</button>
+        <div>
+            <label for="cantidadManzana">Cantidad de Manzanas:</label>
+            <input type="number" id="cantidadManzana" value="1" min="1">
+            <button onclick="agregarAlCarrito('Manzana', 100, 'Manzana')">Agregar Manzana 🍎 ($100.00)</button>
+        </div>
+        <div>
+            <label for="cantidadBanana">Cantidad de Bananas:</label>
+            <input type="number" id="cantidadBanana" value="1" min="1">
+            <button onclick="agregarAlCarrito('Banana', 150, 'Banana')">Agregar Banana 🍌 ($150.00)</button>
+        </div>
+        <div>
+            <label for="cantidadNaranja">Cantidad de Naranjas:</label>
+            <input type="number" id="cantidadNaranja" value="1" min="1">
+            <button onclick="agregarAlCarrito('Naranja', 175, 'Naranja')">Agregar Naranja 🍊 ($175.00)</button>
+        </div>
+        <div>
+            <label for="cantidadPapaya">Cantidad de Papayas:</label>
+            <input type="number" id="cantidadPapaya" value="1" min="1">
+            <button onclick="agregarAlCarrito('Papaya', 275, 'Papaya')">Agregar Papaya 🥭 ($275.00)</button>
+        </div>
+        <div>
+            <label for="cantidadFrutilla">Cantidad de Frutillas:</label>
+            <input type="number" id="cantidadFrutilla" value="1" min="1">
+            <button onclick="agregarAlCarrito('Frutilla', 375, 'Frutilla')">Agregar Frutilla 🍓 ($375.00)</button>
+        </div>
     </div>
+
+    <div id="metodoEnvio">
+        <h2>Método de Entrega</h2>
+        <label>
+            <input type="radio" name="envio" value="retiro" onclick="seleccionarMetodoEnvio()"> Retiro en Tienda
+        </label>
+        <label>
+            <input type="radio" name="envio" value="envio" onclick="seleccionarMetodoEnvio()"> Envío a Domicilio
+        </label>
+
+        <div id="direccionEnvio" style="display: none; margin-top: 10px;">
+            <label for="direccion">Dirección de Envío:</label>
+            <input type="text" id="direccion" placeholder="Ingresa tu dirección">
+        </div>
+    </div>
+
     <div id="carrito">
         <h2>Tu carrito</h2>
         <ul id="items-del-carrito"></ul>
@@ -32,6 +60,7 @@
         <button onclick="borrarTodosLosItems()">Borrar carrito</button>
         <button onclick="pagar()">Pagar!</button>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
